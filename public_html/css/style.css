@@ -46,27 +46,27 @@ navigation bar
 }
 
 /*
-login
+login and signup
 */
-.login-container {
+.login-container, .signup-container {
 	margin: 30px auto;
 	text-align: center;
 	width: 400px;
 	background: rgb(245, 245, 245);
 }
 
-.login-container h1 {
+.login-container h1, .signup-container h1 {
 	text-align: center;
 	color: black;
 	font-size: 36px;
 	padding: 20px 0px 20px 0px;
 }
 
-.login-container p {
+.login-container p, .signup-container p  {
 	display: none;
 }
 
-.login-container form {
+.login-container form, .signup-container form {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -74,30 +74,33 @@ login
 	padding-bottom: 20px;
 }
 
-.login-container input {
+.login-container input, .signup-container input {
 	margin: 10px;
 	background: rgb(255, 255, 255);
 	border: 1px solid black;
 	font-size: 16px;
 }
 
-.login-container input[type=text], .login-container input[type=password] {
+.login-container input[type=text], .login-container input[type=password],
+.signup-container input[type=text], .signup-container input[type=password] {
 	padding: 10px;
 	width: 90%;
 }
 
-.login-container input[type=submit] {
+.login-container input[type=submit], .signup-container input[type=submit] {
 	padding: 10px;
 	width: 20%;
 	transition: 0.2s;
 }
 
-.login-container input[type=submit]:hover {
+.login-container input[type=submit]:hover,
+.signup-container input[type=submit]:hover {
 	background: rgb(220, 220, 220);
 	transition: 0.2s;
 }
 
-.login-container input[type=submit]:active {
+.login-container input[type=submit]:active,
+.signup-container input[type=submit]:active {
 	background: rgb(200, 200, 200);
 }
 

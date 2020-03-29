@@ -1,10 +1,10 @@
 <?php 
-	require_once "../inc/db.php";
+	require_once "../../inc/db.php";
 
 	session_start();
 
 	if(!isset($_POST["username"], $_POST["password"])){
-		header("Location: login.php");
+		header("Location: ../login.php");
 		die();
 	}
 
@@ -17,7 +17,7 @@
 
 	$result = mysqli_query($db, "CALL get_id_password('$username')");
 	if(!$result || mysqli_num_rows($result) != 1){
-		header("Location: login.php?invalid=true");
+		header("Location: ../login.php?invalid=true");
 		die();
 	}
 
@@ -30,9 +30,9 @@
 		$_SESSION["accountid"] = $row["id"];
 		$_SESSION["username"] = $_POST["username"];
 
-		header("Location: Files.php");
+		header("Location: ../index.php");
 	} else {
-		header("Location: login.php?invalid=true");
+		header("Location: ../login.php?invalid=true");
 	}
 
 ?>
