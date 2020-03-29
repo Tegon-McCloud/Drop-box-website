@@ -1,16 +1,26 @@
 
-const canvas = document.getElementById('game-canvas');
-const context = canvas.getContext('2d');
+const canvas = document.getElementById("game-canvas");
+const context = canvas.getContext("2d");
 
 const gridWidth = 32;
 const gridHeight = 24;
-const unitSize = 32;
 
-canvas.setAttribute("width", gridWidth*unitSize);
-canvas.setAttribute("height", gridHeight*unitSize);
+var unitSize;
+
+window.onresize = function(event) {
+	var containerRect = document.getElementById("game-container").getBoundingClientRect();
+	var unitHeight = Math.floor((window.innerHeight - containerRect.top) * 0.95 / gridHeight);
+	var unitWidth = Math.floor((containerRect.right - containerRect.left) * 0.95 / gridWidth);
+
+	unitSize = unitHeight < unitWidth ? unitHeight : unitWidth;
+
+	canvas.width = gridWidth * unitSize;
+	canvas.height = gridHeight * unitSize;
+};
+
+window.onresize();
 
 var snake;
-
 var dir;
 var requestDir;
 var score;
@@ -114,16 +124,24 @@ function placeFruit() {
 }
 
 function draw() {
+	// dark background
 	context.fillStyle = "rgb(40, 40, 40)";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
+	// fruit
 	context.fillStyle = "rgb(220, 60, 40)";
 	context.fillRect(fruit.x * unitSize, fruit.y * unitSize, unitSize, unitSize);
 
+	// snek
 	context.fillStyle = "rgb(60, 200, 40)";
 	for(let i = 0; i < snake.length; i++) {
 		context.fillRect(snake[i].x * unitSize, snake[i].y * unitSize, unitSize, unitSize);
 	}
+
+	// score
+	context.font = `bold ${unitSize}px monospace`;
+	context.fillStyle = "rgb(230, 230, 230)";
+	context.fillText(`Score: ${score}`, unitSize * 0.5, unitSize * 1);
 }
 
 initGame();

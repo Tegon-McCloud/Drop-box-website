@@ -10,9 +10,10 @@
 	include "../inc/header.php";
 	?>
 
-	<canvas id="game-canvas" width="0" height="0"></canvas>
+	<div id="game-container">
+		<canvas id="game-canvas"></canvas>
+	</div>
 	<script src="js/snake.js"></script>
-
 
 	<?php
 	include "../inc/footer.php";
