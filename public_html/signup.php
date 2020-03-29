@@ -3,14 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="css/style.css" type="text/css" rel="stylesheet">
-	<title>Document</title>
+	<title>Sign up</title>
 </head>
 <body>
 	<?php
 	include '../inc/header.php';
 	?>
-
-	<script src="js/signup.js"></script>
 
 	<div class="signup-container">
 		<h1>Sign up</h1>
@@ -24,6 +22,7 @@
 		</form>
 	</div>
 
+	<script src="js/signup.js"></script>
 
 	 <?php
 	 include '../inc/footer.php';

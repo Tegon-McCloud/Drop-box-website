@@ -13,7 +13,7 @@
 	$username = mysqli_real_escape_string($db, $_POST["username"]);
 
 	// TODO convert to stored procedure call
-	$result = mysqli_query($db, "SELECT 1 FROM accounts WHERE username = '$username'");
+	$result = mysqli_query($db, "SELECT 1 FROM accounts WHERE username = '$username';");
 	if(mysqli_num_rows($result) != 0){
 		header("Location: ../signup.php?taken=true");
 		die();

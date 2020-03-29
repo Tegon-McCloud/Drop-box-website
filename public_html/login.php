@@ -11,7 +11,6 @@
 	include '../inc/header.php';
 	?>
 
-	<script src="js/login.js"></script>
 	<div class="login-container">
 		<h1>Log in</h1>
 		<p id="invalid">Invalid username or password.</p>
@@ -21,6 +20,8 @@
 			<input type="submit" value="Log in">
 		</form>
 	</div>
+
+	<script src="js/login.js"></script>
 
 	 <?php
 	 include '../inc/footer.php';

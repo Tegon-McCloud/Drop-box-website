@@ -1,4 +1,13 @@
 
+checkTaken();
+
+function checkTaken() {
+	let params = new URLSearchParams(location.search);
+	if(params.get("taken") === "true"){
+		document.getElementById("taken").style.display = "block";
+	}
+}
+
 function validate(form) {
 	let pw = form.password.value;
 	let pwc = form.passwordControl.value;
