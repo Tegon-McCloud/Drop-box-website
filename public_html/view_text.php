@@ -10,26 +10,32 @@
 	include '../inc/header.php';
 	?>
 
- 	<table class="view-text-table">
+	<table class="view-text-table">
 	
+	<thead>
+		<tr>
+			<th colspan="2"><?php echo $_GET["view"];?></th>
+		</tr>
+	</thead>
+
 	<tbody>
 	
-	<?php
+		<?php
 
-	$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
-	$file = fopen($fname, "r") or die("Unable to open file!");
-	
-	while (($line = fgets($file)) !== false) {
-		echo "<tr>";
-		echo "<td>$line</td>";
-		echo "</tr>";
-	}
-	
-	fclose($file);
-	?>
-	
+		$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
+		$file = fopen($fname, "r") or die("Unable to open file!");
+ 		$linenum = 1;
+		while (($line = fgets($file)) !== false) {
+			echo "<tr>";
+			echo "<td>$linenum</td>";
+			echo "<td>$line</td>";
+			echo "</tr>";
+			$linenum++;
+		}
+		
+		fclose($file);
+		?>
 	</tbody>
-	
 	</table>
 
 	 <?php

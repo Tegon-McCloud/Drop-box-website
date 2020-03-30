@@ -1,5 +1,6 @@
 USE FileStorage;
-INSERT INTO accounts VALUES (666, "Hacks", "666");
+INSERT INTO accounts VALUES (666, "hack account", "666");
+INSERT INTO files VALUES (DEFAULT, 666, "hacker.txt");
 INSERT INTO files VALUES (DEFAULT, 666, "C:HEJHEJ MED DIGawd");
 
 /*

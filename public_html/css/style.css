@@ -10,6 +10,14 @@ body {
 	background-color: rgb(50, 60, 80);
 }
 
+table {
+	border: 1px solid rgb(0, 0, 0);
+	border-spacing: 0px;
+	border-collapse: collapse;
+	background: rgb(245, 245, 245);
+	color: rgb(0, 0, 0);
+}
+
 /*
 navigation bar
 */
@@ -117,4 +125,62 @@ snake game
 #game-canvas {
 	border: 1px solid rgb(0, 0, 0);
 	display: inline-block;
+}
+
+/* shared files and view text tables*/
+.view-text-table, .files-table {
+	width: 800px;
+	margin: 30px auto;
+}
+
+/*
+files table
+*/
+
+.files-table th {
+	border-bottom: 1px solid rgb(0, 0, 0);
+	font-size: 20px;
+	padding: 8px 20px;
+	text-align: left;
+}
+
+.files-table td, .files-table td a {
+	padding: 4px 10px;
+	font-size: 14px;
+}
+
+.files-table td {
+	border-bottom: 1px solid rgb(0, 0, 0);
+	font-family: Consolas, monospace;
+	width: 100px;
+}
+
+.files-table td:first-child {
+	width: 700px;
+}
+
+/*
+view text table
+*/
+.view-text-table th, .view-text-table td {
+	font-family: Consolas, monospace;
+}
+
+.view-text-table th {
+	border: 1px solid rgb(0, 0, 0);
+	text-align: left;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.view-text-table td {
+	border: none;
+	padding: 4px 10px;
+	font-size: 14px;
+}
+
+.view-text-table td:first-child {
+	border-right: 1px solid rgb(0, 0, 0);
+	width: 32px;
 }

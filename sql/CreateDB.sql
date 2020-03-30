@@ -38,7 +38,6 @@ BEGIN
 	INSERT INTO accounts(username, password) VALUES(_username, _password);
 END$$
 
-
 CREATE PROCEDURE delete_account(IN _account_id int)
 BEGIN
 	DELETE FROM files WHERE account_id = _account_id;
