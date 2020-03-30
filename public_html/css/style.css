@@ -136,7 +136,6 @@ snake game
 /*
 files table
 */
-
 .files-table th {
 	border-bottom: 1px solid rgb(0, 0, 0);
 	font-size: 20px;
@@ -156,7 +155,7 @@ files table
 }
 
 .files-table td:first-child {
-	width: 700px;
+	width: 500px;
 }
 
 /*
