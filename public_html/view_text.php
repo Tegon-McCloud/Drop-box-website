@@ -10,16 +10,14 @@
 	include '../inc/header.php';
 	?>
 
- 	<table>
+ 	<table class="view-text-table">
 	
 	<tbody>
 	
 	<?php
 
-	$fname = "hej.txt";
-	//$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
-	echo "$fname";
-	$file = fopen("hej.txt", "r") or die("Unable to open file!");
+	$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
+	$file = fopen($fname, "r") or die("Unable to open file!");
 	
 	while (($line = fgets($file)) !== false) {
 		echo "<tr>";
