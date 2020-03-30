@@ -3,7 +3,7 @@
 	function openDB() {
 		// username and password strictly should be read from config file outside webroot
 		// but this works for now.
-		$db = mysqli_connect("127.0.0.1", "root", "1234", "FileStorage");
+		$db = mysqli_connect("127.0.0.1", "root", "", "FileStorage");
 
 		if(!$db) {
 			echo "Failed to connect to mySQL database:".PHP_EOL;
