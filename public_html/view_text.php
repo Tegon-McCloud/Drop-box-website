@@ -21,24 +21,24 @@
 	<tbody>
 	
 		<?php
+			require "../inc/verify_path.php";
 
-		$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
-		$finfo = pathinfo(realpath($fname));
- 		if(!preg_match("/.*\\".$_SESSION["accountid"]."/", $finfo["dirname"])){
-			 die("nice dot-dot-slah attack OMEGALUL");
-		}
-		
-		$file = fopen($fname, "r") or die("Unable to open file!");
- 		$linenum = 1;
-		while (($line = fgets($file)) !== false) {
-			echo "<tr>";
-			echo "<td>$linenum</td>";
-			echo "<td>$line</td>";
-			echo "</tr>";
-			$linenum++;
-		}
-		
-		fclose($file);
+			$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
+			if(!isPathInAccDir($fname, $_SESSION["accountid"])){ // secure against file traversal
+				die();
+			}
+
+			$file = fopen($fname, "r") or die("Unable to open file!");
+			$linenum = 1;
+			while (($line = fgets($file)) !== false) {
+				echo "<tr>";
+				echo "<td>$linenum</td>";
+				echo "<td>$line</td>";
+				echo "</tr>";
+				$linenum++;
+			}
+			
+			fclose($file);
 		?>
 	</tbody>
 	</table>
