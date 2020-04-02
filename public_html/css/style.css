@@ -70,10 +70,6 @@ login and signup
 	padding: 20px 0px 20px 0px;
 }
 
-.login-container p, .signup-container p  {
-	display: none;
-}
-
 .login-container form, .signup-container form {
 	display: flex;
 	flex-wrap: wrap;
@@ -112,7 +108,6 @@ login and signup
 	background: rgb(200, 200, 200);
 }
 
-
 /*
 snake game
 */
@@ -131,6 +126,7 @@ snake game
 .view-text-table, .files-table {
 	width: 800px;
 	margin: 30px auto;
+	table-layout: auto;
 }
 
 /*
@@ -155,7 +151,7 @@ files table
 }
 
 .files-table td:first-child {
-	width: 500px;
+	width: auto;
 }
 
 /*
@@ -176,12 +172,15 @@ view text table
 .view-text-table td {
 	border: none;
 	padding: 4px 10px;
+	word-wrap: normal;
+	white-space: normal;
 	font-size: 14px;
 }
 
+
 .view-text-table td:first-child {
 	border-right: 1px solid rgb(0, 0, 0);
-	width: 32px;
+	width: 1%;
 }
 
 /*

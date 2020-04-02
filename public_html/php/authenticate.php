@@ -3,13 +3,18 @@
 
 	session_start();
 
+	define("SUCCESS", 0);
+	define("INVALID", 1);
+	define("ERROR", 2);
+	
 	if(!isset($_POST["username"], $_POST["password"])){
-		header("Location: ../login.php");
+		echo INVALID;
 		die();
 	}
 
 	$db = openDB();
 	if(!$db){
+		echo ERROR;
 		die();
 	}
 
@@ -17,7 +22,7 @@
 
 	$result = mysqli_query($db, "CALL get_id_password('$username')");
 	if(!$result || mysqli_num_rows($result) != 1){
-		header("Location: ../login.php?invalid=true");
+		echo INVALID;
 		die();
 	}
 
@@ -31,10 +36,9 @@
 		$_SESSION["loggedin"] = TRUE;
 		$_SESSION["accountid"] = $row["id"];
 		$_SESSION["username"] = $_POST["username"];
-
-		header("Location: ../index.php");
+		echo(SUCCESS);
 	} else {
-		header("Location: ../login.php?invalid=true");
+		echo INVALID;
 	}
 
 ?>

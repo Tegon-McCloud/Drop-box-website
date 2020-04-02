@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<title>Sign up</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<?php
@@ -12,9 +13,8 @@
 
 	<div class="signup-container">
 		<h1>Sign up</h1>
-		<p id="no-match">Please make sure that password fields match.</p>
-		<p id="taken">This username has already been taken.</p>
-		<form action="php/create_account.php" onsubmit="return validate(this);" method="post">
+		<p id="message"></p>
+		<form id="signup-form" onsubmit="asyncSendForm(); return false;" method="post">
 			<input type="text" name="username" placeholder="Username" required>
 			<input type="password" name="password" placeholder="Password" required>
 			<input type="password" name="passwordControl" placeholder="Password" required>

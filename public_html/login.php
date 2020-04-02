@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<title>Log in</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -13,8 +14,8 @@
 
 	<div class="login-container">
 		<h1>Log in</h1>
-		<p id="invalid">Invalid username or password.</p>
-		<form action="php/authenticate.php" method="post">
+		<p id="message"></p>
+		<form id="login-form" onsubmit="asyncSendForm(); return false;" method="post">
 			<input type="text" name="username" placeholder="Username" required>
 			<input type="password" name="password" placeholder="Password" required>
 			<input type="submit" value="Log in">

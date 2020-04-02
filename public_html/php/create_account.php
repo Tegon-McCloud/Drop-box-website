@@ -1,22 +1,28 @@
 <?php
 	include '../../inc/db.php';
 	
+	define("SUCCESS", 0);
+	define("USERNAME_TAKEN", 1);
+	define("ERROR", 2);
+
 	if(!isset($_POST["username"], $_POST["password"])){
-		header("Location: ../signup.php");
+		echo ERROR;
 		die();
 	}
 
 	$db = openDB();
-	if(!$db)
+	if(!$db){
+		echo ERROR;
 		die();
-
+	}
+		
 	$username = mysqli_real_escape_string($db, $_POST["username"]);
 
 	// TODO convert to stored procedure call
 	$result = mysqli_query($db, "SELECT 1 FROM accounts WHERE username = '$username';");
 	if(mysqli_num_rows($result) != 0){
 		closeDB($db);
-		header("Location: ../signup.php?taken=true");
+		echo USERNAME_TAKEN;
 		die();
 	}
 
@@ -25,8 +31,8 @@
 	$result = mysqli_query($db, "CALL create_account('$username', '$password')");
 	if(!$result){
 		closeDB($db);
-		die("Unknown error occured while trying to sign you up.<br>
-		 Please return to the <a href=\"signup.php\">sign up page</a> and try again.");
+		echo ERROR;
+		die();
 	}
 
 	// log user in
@@ -41,5 +47,5 @@
 	$_SESSION["username"] = $_POST["username"];
 
 	closeDB($db);
-	header("Location: ../index.php");
+	echo SUCCESS;
 ?>

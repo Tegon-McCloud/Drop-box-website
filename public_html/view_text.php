@@ -33,7 +33,7 @@
 			while (($line = fgets($file)) !== false) {
 				echo "<tr>";
 				echo "<td>$linenum</td>";
-				echo "<td>$line</td>";
+				echo "<td>".htmlspecialchars($line)."</td>";
 				echo "</tr>";
 				$linenum++;
 			}

@@ -1,22 +1,35 @@
 
-checkTaken();
+function asyncSendForm() {
 
-function checkTaken() {
-	let params = new URLSearchParams(location.search);
-	if(params.get("taken") === "true"){
-		document.getElementById("taken").style.display = "block";
-	}
-}
+	const SUCCESS = 0;
+	const USERNAME_TAKEN = 1;
+	const ERROR = 2;
 
-function validate(form) {
-	let pw = form.password.value;
-	let pwc = form.passwordControl.value;
-	
+	let pw = $("#signup-form input[name=password]").val();
+	let pwc = $("#signup-form input[name=passwordControl]").val();
+
 	if(pw !== pwc){
-		form.passwordControl.focus();
-		document.getElementById("no-match").style.display = "block";
-		return false;
+		$("#message").text("Please make sure that passwords match.");
+		return;
 	}
 
-	return true;
+	$.ajax({
+		type: "POST",
+		url: "php/create_account.php",
+		data: $("#signup-form").serialize(),
+
+		success: function(response) {
+			switch(parseInt(response)) {
+			case SUCCESS:
+				window.location.replace("index.php");
+				break;
+			case USERNAME_TAKEN:
+				$("#message").text("This username has already been taken.");
+				break;
+			case ERROR:
+				$("#message").text("Serverside error occured. Please try again.");
+				break;
+			}
+		}
+	});
 }
