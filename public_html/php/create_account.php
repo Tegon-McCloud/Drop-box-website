@@ -15,6 +15,7 @@
 	// TODO convert to stored procedure call
 	$result = mysqli_query($db, "SELECT 1 FROM accounts WHERE username = '$username';");
 	if(mysqli_num_rows($result) != 0){
+		closeDB($db);
 		header("Location: ../signup.php?taken=true");
 		die();
 	}
@@ -23,6 +24,7 @@
 
 	$result = mysqli_query($db, "CALL create_account('$username', '$password')");
 	if(!$result){
+		closeDB($db);
 		die("Unknown error occured while trying to sign you up.<br>
 		 Please return to the <a href=\"signup.php\">sign up page</a> and try again.");
 	}
@@ -38,5 +40,6 @@
 	$_SESSION["accountid"] = $row["id"];
 	$_SESSION["username"] = $_POST["username"];
 
+	closeDB($db);
 	header("Location: ../index.php");
 ?>

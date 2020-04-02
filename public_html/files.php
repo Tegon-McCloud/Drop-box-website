@@ -4,13 +4,23 @@
 	<meta charset="UTF-8">
 	<link href="/css/style.css" type="text/css" rel="stylesheet">
 	<title>File storage</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<?php
 	include '../inc/header.php';
 	?>
 
- 	<table class="files-table">
+	<div class="upload-area" ondrop="onDrop(event)" ondragover="onDragOver(event)">
+	<p>Drag and drop files to upload</p>
+	</div>
+
+	 <form action="php/upload.php" id="files-form" enctype="multipart/form-data" style="display: none" method="post">
+ 		<input type="text" name="path">
+		<input type="file" name="files[]" multiple></input>
+	</form>
+
+ 	<table class="files-table" ondrop="onDrop(event)" ondragover="onDragOver(event)">
 		<thead>
 			<tr>
 				<th colspan="4">Files</th>
@@ -38,6 +48,8 @@
 			?>
 		</tbody>
 	</table>
+
+	<script src="../js/upload.js" type="text/javascript"></script>
 
 	 <?php
 	 include '../inc/footer.php';

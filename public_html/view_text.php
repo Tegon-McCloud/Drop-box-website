@@ -23,6 +23,11 @@
 		<?php
 
 		$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
+		$finfo = pathinfo(realpath($fname));
+ 		if(!preg_match("/.*\\".$_SESSION["accountid"]."/", $finfo["dirname"])){
+			 die("nice dot-dot-slah attack OMEGALUL");
+		}
+		
 		$file = fopen($fname, "r") or die("Unable to open file!");
  		$linenum = 1;
 		while (($line = fgets($file)) !== false) {

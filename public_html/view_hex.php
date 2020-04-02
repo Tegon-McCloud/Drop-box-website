@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,9 +9,7 @@
 	<?php
 	include '../inc/header.php';
 	?>
-
 	
-
 	<?php
 	include '../inc/footer.php';
 	?>

@@ -183,3 +183,22 @@ view text table
 	border-right: 1px solid rgb(0, 0, 0);
 	width: 32px;
 }
+
+/*
+upload field
+*/
+.upload-area {
+	margin: 30px auto;
+	width: 800px;
+	height: 120px;
+	text-align: center;
+	border: 8px dashed rgb(30, 40, 60);
+	border-radius: 50vh; /* huge number will cap out at 50% height of parent */
+}
+
+.upload-area p {
+	margin: 28px auto;
+	font-size: 32px;
+	font-weight: 600;
+	color: rgb(20, 30, 50);
+}

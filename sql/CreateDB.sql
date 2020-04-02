@@ -4,7 +4,7 @@ CREATE DATABASE FileStorage;
 USE FileStorage;
 
 /*
-Create tables
+Create tablesfile_path
 */
 CREATE TABLE accounts(
 	id int UNIQUE NOT NULL AUTO_INCREMENT,
