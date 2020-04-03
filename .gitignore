@@ -1,3 +1,4 @@
 Dropbox.zip
 /inc/db.php
 public_hmtl/uploads/*
+!public_html/uploads/.htaccess
