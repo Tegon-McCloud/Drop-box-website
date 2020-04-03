@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="/css/style.css" type="text/css" rel="stylesheet">
-	<title>Snake</title>
+	<title>File Storage - Snake</title>
 </head>
 <body>
 	<?php

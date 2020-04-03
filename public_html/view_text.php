@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="/css/style.css" type="text/css" rel="stylesheet">
-	<title>File storage</title>
+	<title>File storage - View file</title>
 </head>
 <body>
 	<?php
