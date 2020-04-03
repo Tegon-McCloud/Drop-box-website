@@ -19,10 +19,10 @@
 		<input type="file" name="files[]" multiple></input>
 	</form>
 
- 	<table class="files-table" ondrop="onDrop(event)" ondragover="onDragOver(event)">
+ 	<table id="files-table" ondrop="onDrop(event)" ondragover="onDragOver(event)">
 		<thead>
 			<tr>
-				<th colspan="4">Files</th>
+				<th colspan="4"><h1>Files</h1></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,10 +38,10 @@
 			$result = mysqli_query($db, "CALL get_file_paths('".$_SESSION["accountid"]."', 50);");
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "<tr>";
-				echo "<td>".$row["file_path"]."</td>";
-				echo "<td><a href=\"view_text.php?view=".$row["file_path"]."\">text view</a></td>";
-				echo "<td><a href=\"view_hex.php?view=".$row["file_path"]."\">hex view</a></td>";
-				echo "<td><a href=\"#\">download</a></td>";
+				echo "<td><span>".$row["file_path"]."</span></td>";
+				echo "<td><span><a href=\"view_text.php?view=".$row["file_path"]."\">text view</a></span></td>";
+				echo "<td><span><a href=\"view_hex.php?view=".$row["file_path"]."\">hex view</a></span></td>";
+				echo "<td><span><a href=\"#\">download</a></span></td>";
 				echo "</tr>";
 			}
 			?>

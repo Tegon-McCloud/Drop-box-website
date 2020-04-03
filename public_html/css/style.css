@@ -7,7 +7,12 @@
 }
 
 body {
-	background-color: rgb(50, 60, 80);
+	background-color: rgb(38, 53, 83);
+}
+
+a {
+	font-size: inherit;
+	font-family: inherit;
 }
 
 table {
@@ -122,41 +127,90 @@ snake game
 	display: inline-block;
 }
 
-/* shared files and view text tables*/
-.view-text-table, .files-table {
-	width: 800px;
-	margin: 30px auto;
-	table-layout: auto;
-}
-
 /*
 files table
 */
-.files-table th {
-	border-bottom: 1px solid rgb(0, 0, 0);
+#files-table {
+	width: 60%;
+	margin: 30px auto;
+	table-layout: auto;
+	background: rgba(0, 0, 0, 0);
+	border: none;
+}
+
+#files-table th {
 	font-size: 20px;
 	padding: 8px 20px;
 	text-align: left;
 }
 
-.files-table td, .files-table td a {
-	padding: 4px 10px;
-	font-size: 14px;
+#files-table th h1 {
+	font-size: 32px;
+	color: rgba(245, 245, 245, 0.8);
 }
 
-.files-table td {
-	border-bottom: 1px solid rgb(0, 0, 0);
-	font-family: Consolas, monospace;
-	width: 100px;
+#files-table tr {
+	transition: 0.2s;
+	display: block;
+	width: 100%;
+	text-align: right;
 }
 
-.files-table td:first-child {
-	width: auto;
+#files-table tbody tr:nth-child(odd) {
+	background: rgba(0, 0, 0, 0.06);
 }
+
+#files-table tbody tr:nth-child(odd):hover {
+	background: rgba(0, 0, 0, 0.12);
+	margin: 6px 0px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#files-table tbody tr:nth-child(even) {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+#files-table tbody tr:nth-child(even):hover {
+	background: rgba(255, 255, 255, 0.12);
+	margin: 6px 0px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#files-table td {
+	text-align: left;
+	display: inline-block;
+	padding: 2%;
+	width: 15%;
+	min-width: 120px;
+}
+
+#files-table td:first-child {
+	width: 55%;
+}
+
+#files-table td span {
+	font-size: 18px;
+	color: rgba(245, 245, 245, 0.8);
+}
+
+#files-table td span a {
+	color: rgba(0, 140, 255, 0.8);
+}
+
+#files-table td span a:visited {
+	color: rgba(200, 200, 0, 0.8);
+}
+
 
 /*
 view text table
 */
+.view-text-table {
+	width: 60%;
+	margin: 30px auto;
+	table-layout: auto;
+}
+
 .view-text-table th, .view-text-table td {
 	font-family: Consolas, monospace;
 }
@@ -188,7 +242,7 @@ upload field
 */
 .upload-area {
 	margin: 30px auto;
-	width: 800px;
+	width: 60%;
 	height: 120px;
 	text-align: center;
 	border: 8px dashed rgb(30, 40, 60);
