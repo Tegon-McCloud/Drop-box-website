@@ -8,7 +8,7 @@
 </head>
 <body>
 	<?php
-	include '../inc/header.php';
+	include 'inc/header.php';
 	?>
 
 	<div class="signup-container">
@@ -25,7 +25,7 @@
 	<script src="js/signup.js"></script>
 
 	 <?php
-	 include '../inc/footer.php';
+	 include 'inc/footer.php';
 	 ?>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
 
 	<?php
-	include '../inc/header.php';
+	include 'inc/header.php';
 	?>
 
 	<div class="login-container">
@@ -25,7 +25,7 @@
 	<script src="js/login.js"></script>
 
 	 <?php
-	 include '../inc/footer.php';
+	 include 'inc/footer.php';
 	 ?>
 </body>
 </html>

@@ -7,10 +7,10 @@
 </head>
 <body>
 	<?php
-	include '../inc/header.php';
+	include 'inc/header.php';
 	?>
 
-	<table class="view-text-table">
+	<table id="view-text-table">
 	
 	<thead>
 		<tr>
@@ -21,9 +21,9 @@
 	<tbody>
 	
 		<?php
-			require "../inc/verify_path.php";
+			require "inc/verify_path.php";
 
-			$fname = "../uploads/".$_SESSION["accountid"]."/".$_GET["view"];
+			$fname = "uploads/".$_SESSION["accountid"]."/".$_GET["view"];
 			if(!isPathInAccDir($fname, $_SESSION["accountid"])){ // secure against file traversal
 				die();
 			}
@@ -33,7 +33,7 @@
 			while (($line = fgets($file)) !== false) {
 				echo "<tr>";
 				echo "<td>$linenum</td>";
-				echo "<td>".htmlspecialchars($line)."</td>";
+				echo "<td><pre>".htmlspecialchars($line)."</pre></td>";
 				echo "</tr>";
 				$linenum++;
 			}
@@ -44,7 +44,7 @@
 	</table>
 
 	 <?php
-	 include '../inc/footer.php';
+	 include 'inc/footer.php';
 	 ?>
 </body>
 </html>

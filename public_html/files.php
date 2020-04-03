@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link href="/css/style.css" type="text/css" rel="stylesheet">
+	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<title>File storage - Files</title>
 </head>
 <body>
 	<?php
-	include '../inc/header.php';
+	include 'inc/header.php';
 	?>
 
 	<div class="upload-area" ondrop="onDrop(event)" ondragover="onDragOver(event)">
@@ -27,7 +27,7 @@
 		</thead>
 		<tbody>
 			<?php
-			require_once "../inc/db.php";
+			require_once "inc/db.php";
 			if(!isset($_SESSION["loggedin"])) {
 				header("Location: login.php");
 			}
@@ -37,12 +37,12 @@
 			}
 			$result = mysqli_query($db, "CALL get_file_paths('".$_SESSION["accountid"]."', 50);");
 			while($row = mysqli_fetch_assoc($result)) {
-				echo "<tr>";
-				echo "<td><span>".$row["file_path"]."</span></td>";
-				echo "<td><span><a href=\"view_text.php?view=".$row["file_path"]."\">text view</a></span></td>";
-				echo "<td><span><a href=\"view_hex.php?view=".$row["file_path"]."\">hex view</a></span></td>";
-				echo "<td><span><a href=\"#\">download</a></span></td>";
-				echo "</tr>";
+				echo "<tr>\n";
+				echo "<td><span>".$row["file_path"]."</span></td>\n";
+				echo "<td><span><a href=\"view_text.php?view=".$row["file_path"]."\">text view</a></span></td>\n";
+				echo "<td><span><a href=\"\">download</a></span></td>\n";
+				echo "<td><span><a href=\"\">delete</a></span></td>\n";
+				echo "</tr>\n";
 			}
 			?>
 		</tbody>
@@ -51,7 +51,7 @@
 	<script src="../js/upload.js" type="text/javascript"></script>
 
 	 <?php
-	 include '../inc/footer.php';
+	 include 'inc/footer.php';
 	 ?>
 </body>
 </html>

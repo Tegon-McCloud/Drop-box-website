@@ -5,6 +5,8 @@ function asyncSendForm() {
 	const USERNAME_TAKEN = 1;
 	const ERROR = 2;
 
+	alert("creating account")
+
 	let pw = $("#signup-form input[name=password]").val();
 	let pwc = $("#signup-form input[name=passwordControl]").val();
 

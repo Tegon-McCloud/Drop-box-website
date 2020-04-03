@@ -11,7 +11,7 @@
 	if(!$db)
 		die();
 
-	$path = "../../uploads/".$_SESSION["accountid"]."/";
+	$path = "../uploads/".$_SESSION["accountid"]."/";
 
 	if(!is_dir($path)){
 		mkdir($path);

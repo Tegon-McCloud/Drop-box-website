@@ -180,12 +180,11 @@ files table
 	text-align: left;
 	display: inline-block;
 	padding: 2%;
-	width: 15%;
-	min-width: 120px;
+	width: 12%;
 }
 
 #files-table td:first-child {
-	width: 55%;
+	width: 60%;
 }
 
 #files-table td span {
@@ -205,17 +204,17 @@ files table
 /*
 view text table
 */
-.view-text-table {
+#view-text-table {
 	width: 60%;
 	margin: 30px auto;
 	table-layout: auto;
 }
 
-.view-text-table th, .view-text-table td {
+#view-text-table th, #view-text-table td {
 	font-family: Consolas, monospace;
 }
 
-.view-text-table th {
+#view-text-table th {
 	border: 1px solid rgb(0, 0, 0);
 	text-align: left;
 	padding: 10px 20px;
@@ -223,7 +222,7 @@ view text table
 	font-weight: 400;
 }
 
-.view-text-table td {
+#view-text-table td {
 	border: none;
 	padding: 4px 10px;
 	word-wrap: normal;
@@ -231,10 +230,14 @@ view text table
 	font-size: 14px;
 }
 
-
-.view-text-table td:first-child {
+#view-text-table td:first-child {
 	border-right: 1px solid rgb(0, 0, 0);
 	width: 1%;
+}
+
+#view-text-table td pre {
+	font-size: inherit;
+	font-family: inherit;
 }
 
 /*

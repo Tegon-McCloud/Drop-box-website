@@ -5,6 +5,8 @@ function asyncSendForm() {
 	const INVALID = 1;
 	const ERROR = 2;
 	
+	alert("logging in");
+
 	$.ajax({
 		type: "POST",
 		url: "php/authenticate.php",

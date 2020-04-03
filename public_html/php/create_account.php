@@ -1,5 +1,5 @@
 <?php
-	include '../../inc/db.php';
+	include '../inc/db.php';
 	
 	define("SUCCESS", 0);
 	define("USERNAME_TAKEN", 1);
