@@ -40,7 +40,7 @@
 				echo "<tr>\n";
 				echo "<td><span>".$row["file_path"]."</span></td>\n";
 				echo "<td><span><a href=\"view_text.php?view=".$row["file_path"]."\">text view</a></span></td>\n";
-				echo "<td><span><a href=\"\">download</a></span></td>\n";
+				echo "<td><span><a href=\"php/download.php?download=".$row["file_path"]."\">download</a></span></td>\n";
 				echo "<td><span><a href=\"\">delete</a></span></td>\n";
 				echo "</tr>\n";
 			}

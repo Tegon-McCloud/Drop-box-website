@@ -23,6 +23,11 @@
 		<?php
 			require "inc/verify_path.php";
 
+			if(!isset($_SESSION["loggedin"])) {
+				header("Location: login.php");
+				die();
+			}
+
 			$fname = "uploads/".$_SESSION["accountid"]."/".$_GET["view"];
 			if(!isPathInAccDir($fname, $_SESSION["accountid"])){ // secure against file traversal
 				die();

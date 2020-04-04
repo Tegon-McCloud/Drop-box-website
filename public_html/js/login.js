@@ -4,8 +4,6 @@ function asyncSendForm() {
 	const SUCCESS = 0;
 	const INVALID = 1;
 	const ERROR = 2;
-	
-	alert("logging in");
 
 	$.ajax({
 		type: "POST",
