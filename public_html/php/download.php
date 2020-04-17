@@ -8,6 +8,7 @@ set_time_limit(0);
 
 if(!isset($_SESSION["loggedin"])) {
 	die("You are not logged in. <a href=\"../login.php\">Log in</a> or <a href=\"../signup.php\">sign up</a>.");
+	die();
 }
 
 $path = "../uploads/".$_SESSION["accountid"]."/";

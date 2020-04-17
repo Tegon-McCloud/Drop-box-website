@@ -23,9 +23,10 @@
 	}
 	
 	$DB = openDB();
-	$result = mysqli_query($DB, "CALL file_deleted(".$_SESSION["accountid"].")");
+	$result = mysqli_query($DB, "CALL file_deleted(".$_SESSION["accountid"].", '$fname');");
 	if(!$result) {
-		echo("Failed to delete file from database");
+		echo("Failed to delete file from database:<br>");
+		echo mysqli_error($DB);
 	}
 	closeDB($DB);
 	

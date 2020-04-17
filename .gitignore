@@ -1,4 +1,4 @@
 Dropbox.zip
-/inc/db.php
+/public_html/inc/db.php
 **uploads/
 !public_html/uploads/.htaccess

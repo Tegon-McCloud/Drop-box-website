@@ -54,4 +54,9 @@ BEGIN
 	SELECT file_path FROM files WHERE account_id = _account_id;
 END$$
 
+CREATE PROCEDURE file_deleted(IN _account_id int, IN _file_path varchar(255))
+BEGIN
+	DELETE FROM files WHERE account_id = _account_id AND file_path = _file_path;
+END$$
+
 DELIMITER ;
