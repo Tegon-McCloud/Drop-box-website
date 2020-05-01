@@ -9,7 +9,7 @@
 	}
 	
 	$DB = openDB();
-	$result = mysqli_query($DB, "CALL delete_account(".$_SESSION["accountid"]);
+	$result = mysqli_query($DB, "CALL delete_account(".$_SESSION["accountid"].")");
 	if(!$result) {
 		echo("Failed to delete the account from database:<br>");
 		echo mysqli_error($DB);
