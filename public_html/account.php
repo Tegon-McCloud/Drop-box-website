@@ -1,4 +1,8 @@
- <!DOCTYPE html>
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -12,9 +16,28 @@
 		header("Location: login.php");
 	}
 	?>
+	<div id="acc-info">
+		<h1>Account info:</h1>
+		<p>
+			Username: <?php echo $_SESSION["username"];?> <br>
+			Account id: <?php echo $_SESSION["accountid"];?> <br>
+			# Files: <?php
+				include 'inc/db.php';
 
-	<form action="php/delete_account.php" id="delete_acc" method="post">
- 		<input type="submit" value="Delete account">
+				$db = openDB();
+				if($db) {
+					$result = mysqli_query($db, "CALL get_file_paths('".$_SESSION["accountid"]."', 1000);");
+					echo mysqli_num_rows($result);
+				}
+
+				closeDB($db); 
+			?> <br>
+			
+		</p>
+	</div>
+
+	<form action="php/delete_account.php" id="delete-acc" method="post">
+ 		<input type="submit" id="delete-account" value="Delete account">
 	</form>
 
 </body>

@@ -35,7 +35,7 @@
 	}
 	closeDB($DB2);
 	
-	//header("Location: ../php/logout.php");
+	header("Location: ../php/logout.php");
 	
 	die();
 ?>

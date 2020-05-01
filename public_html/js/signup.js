@@ -29,6 +29,9 @@ function asyncSendForm() {
 			case ERROR:
 				$("#message").text("Serverside error occured. Please try again.");
 				break;
+			default:
+				console.log(response);
+				break;
 			}
 		}
 	});

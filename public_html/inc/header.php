@@ -1,8 +1,3 @@
-
-<?php
-session_start();
-?>
-
 <nav class="nav-bar">
 	<h1>File Storage</h1>
 	<?php

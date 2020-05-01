@@ -2,8 +2,6 @@
 function onDrop(event) {
 	event.preventDefault();
 
-
-
 	const files = event.dataTransfer.files;
 	if(files.length == 0) {
 		return;

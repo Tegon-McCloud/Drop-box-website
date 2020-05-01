@@ -10,5 +10,4 @@
 			header("Location: $redirect");
 		}
 	}
-
 ?>

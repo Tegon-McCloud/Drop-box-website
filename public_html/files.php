@@ -1,4 +1,8 @@
- <!DOCTYPE html>
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -35,7 +39,7 @@
 			if(!$db) {
 				die("Couldn't connect");
 			}
-			$result = mysqli_query($db, "CALL get_file_paths('".$_SESSION["accountid"]."', 50);");
+			$result = mysqli_query($db, "CALL get_file_paths('".$_SESSION["accountid"]."', 1000);");
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "<tr>\n";
 				echo "<td><span>".$row["file_path"]."</span></td>\n";
